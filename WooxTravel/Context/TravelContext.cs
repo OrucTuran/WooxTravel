@@ -12,5 +12,8 @@ namespace WooxTravel.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Destination> Destinations { get; set; }
+        public DbSet<Rezervation> Rezervations { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }

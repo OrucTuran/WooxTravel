@@ -1,0 +1,50 @@
+﻿@model List<WooxTravel.Entities.Message>
+@{
+    ViewBag.Title = "SendBox";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Giden Mesajlar</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Alıcı</th>
+                                    <th scope="col">Konu</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Mesajı Aç</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.ReceiverMail</td>
+                                        <td>@item.Subject</td>
+                                        <td>@item.SendDate.ToShortDateString()</td>
+                                        <td>@item.IsRead</td>
+                                        <td><a href="" class="btn btn btn-outline-warning" style="border-radius:30px">Mesajı Aç</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/Admin/Message/SendMessage/" class="btn btn-outline-primary" style="border-radius:30px">Yeni Mesaj Gönder</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

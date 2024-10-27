@@ -1,0 +1,48 @@
+﻿@model WooxTravel.Entities.Destination
+@{
+    ViewBag.Title = "UpdateDestination";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Destinasyon İşlemleri</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/Admin/Destination/CreateDestination">
+                            <div class="form-group">
+                                @Html.HiddenFor(x=>x.DestinationID)
+                                <label>Ülke Adı</label>
+                                @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+                                <br>
+                                <label>Şehir Adı</label>
+                                @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                                <br>
+                                <label>Tur Başlığı</label>
+                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                                <br>
+                                <label>Gün-Gece</label>
+                                @Html.TextBoxFor(x => x.DayNight, new { @class = "form-control" })
+                                <br>
+                                <label>Kapak Görseli URL</label>
+                                @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+                                <br>
+                                <label>Tur Fiyatı</label>
+                                @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                                <br>
+                                <label>Açıklama</label>
+                                @Html.TextAreaFor(x => x.Description, 5, 0, new { @class = "form-control" })
+                                <br />
+                                <button class="btn btn-outline-info" style="border-radius:30px">Tur Rotası Oluştur</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

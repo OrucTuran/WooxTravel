@@ -1,0 +1,52 @@
+﻿@model List<WooxTravel.Entities.Destination>
+@{
+    ViewBag.Title = "DestinationList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Destinasyon İşlemleri</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">ÜLKE</th>
+                                    <th scope="col">ŞEHİR</th>
+                                    <th scope="col">Gün/Gece</th>
+                                    <th scope="col">FİYAT</th>
+                                    <th scope="col">SİL</th>
+                                    <th scope="col">Güncelle</th>
+                                    <th scope="col">Sİtede Gör</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>@item.DestinationID</td>
+                                    <td>@item.Country</td>
+                                    <td>@item.City</td>
+                                    <td>@item.DayNight</td>
+                                    <td>@item.Price</td>
+                                    <td><a href="/Admin/Destination/DeleteDestination/@item.DestinationID" class="btn btn btn-outline-danger" style="border-radius:30px">Sil</a></td>
+                                    <td><a href="/Admin/Destination/UpdateDestination/@item.DestinationID" class="btn btn btn-outline-success" style="border-radius:30px">Güncelle</a></td>
+                                    <td><a href="" class="btn btn btn-outline-info" style="border-radius:30px">Sitede Gör</a></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/Admin/Destination/CreateDestination/" class="btn btn-outline-primary" style="border-radius:30px">Yeni Destinasyon Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

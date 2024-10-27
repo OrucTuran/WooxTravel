@@ -1,0 +1,20 @@
+﻿@model WooxTravel.Entities.Admin
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br />
+        <div><h3>Kullanıcı Giriş Sayfası</h3></div>
+        <label>Kullanıcı Adınız</label>
+        @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+        <br />
+        <label>Şifreniz</label>
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-label-warning" style="border-radius:30px">Giriş Yap</button>
+    </div>
+</form>

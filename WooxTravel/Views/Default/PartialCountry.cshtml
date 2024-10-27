@@ -1,0 +1,67 @@
+﻿@model List<WooxTravel.Entities.Destination>
+
+<div class="visit-country">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="section-heading">
+                    <h2>Popüler Tur ve Seyehat Rotalarımız</h2>
+                    <p>Dünyanın Dört Bir Noktasına Alanında Uzman Rehberler Eşliğinde Seyehata Çıkmaya Hazır Mısınız?</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="items">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+
+                            <div class="col-lg-12">
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-5">
+                                            <div class="image">
+                                                <img src="@item.ImageURL" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-sm-7">
+                                            <div class="right-content">
+                                                <h4>@item.Country</h4>
+                                                <span>@item.City</span>
+                                                <div class="main-button">
+                                                    <a href="about.html">Tur Detayları</a>
+                                                </div>
+                                                <p>@item.Description</p>
+                                                <ul class="info">
+                                                    <li><i class="fa fa-user"></i> @item.DayNight Gün - @(item.DayNight-1) Gece</li>
+                                                    <li><i class="fa fa-globe"></i> @item.Price₺</li>
+                                                    <li><i class="fa fa-person"></i> @item.Capacity</li>
+                                                </ul>
+                                                <div class="text-button">
+                                                    <a href="about.html">Rehberi Görün <i class="fa fa-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="col-lg-4">
+                    <div class="side-bar-map">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div id="map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="550px" frameborder="0" style="border:0; border-radius: 23px; " allowfullscreen=""></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+</div>

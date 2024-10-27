@@ -1,0 +1,31 @@
+﻿@model WooxTravel.Entities.Admin
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br />
+        <div class="alert alert-primary" style="background-color:#808080">
+            <h3>Yeni Kullanıcı Kayıt Sayfası</h3>
+        </div>
+        <label>Adınız</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        <label>Soyadınız</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        <br />
+        <label>Mail Adresiniz</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        <br />
+        <label>Kullanıcı Adınız</label>
+        @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+        <br />
+        <label>Şifreniz</label>
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-outline-primary" style="border-radius:30px">Kayıt Ol</button>
+    </div>
+</form>

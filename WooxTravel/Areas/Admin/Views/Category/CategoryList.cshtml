@@ -1,0 +1,70 @@
+﻿@model List<WooxTravel.Entities.Category>
+
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Tables</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Tables</a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Basic Tables</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+               
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Kategori İşlemleri</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Kategori Adı</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.CategoryID</td>
+                                        <td>@item.CategoryName</td>
+                                        <td><a href=""class="btn btn btn-outline-danger"style="border-radius:30px">Sil</a></td>
+                                        <td><a href=""class="btn btn btn-outline-success"style="border-radius:30px">Güncelle</a></td>
+                                    </tr>
+                                }
+                                </tbody>
+                        </table>
+                        <br />
+                        <a href=""class="btn btn-outline-primary"style="border-radius:30px">Yeni Kategori Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
