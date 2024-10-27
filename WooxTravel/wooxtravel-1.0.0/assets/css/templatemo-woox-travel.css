@@ -817,22 +817,22 @@ Banner Style
   border-color: #22b3c1;
   transition: 0.3s;
 }
-#section-1 .content-slider .slider #top-banner-1 {
-  background: url('https://cdn.tatilsepeti.com/images/Balkan-Turlari.jpg') no-repeat center center;
-  background-size: cover;
-}
-#section-1 .content-slider .slider #top-banner-2 {
-  background: url('https://www.iamontravels.com/wp-content/uploads/2023/08/Koln-Katedral-1-1024x683.webp') no-repeat center center;
-  background-size: cover;
-}
-#section-1 .content-slider .slider #top-banner-3 {
-  background: url('https://www.flypgs.com/blog/wp-content/uploads/2024/05/viyana-da-ucuz-tatil-nasil-yapilir.jpg') no-repeat center center;
-  background-size: cover;
-}
-#section-1 .content-slider .slider #top-banner-4 {
-  background: url('https://www.thetrainline.com/content/vul/hero-images/city/dusseldorf/2x.jpg') no-repeat center center;
-  background-size: cover;
-}
+    #section-1 .content-slider .slider #top-banner-1 {
+        background: url('../../../Content/travelphotos/sofia.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    #section-1 .content-slider .slider #top-banner-2 {
+        background: url('../../../Content/travelphotos/katedral.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    #section-1 .content-slider .slider #top-banner-3 {
+        background: url('../../../Content/travelphotos/viyana.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    #section-1 .content-slider .slider #top-banner-4 {
+        background: url('../../../Content/travelphotos/berlin.jpg') no-repeat center center;
+        background-size: cover;
+    }
 #section-1 .content-slider nav {
   position: absolute;
   bottom: 30px;

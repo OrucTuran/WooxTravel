@@ -175,6 +175,11 @@
     <Content Include="Content\colorlib-error-404-6\css\style.css" />
     <Content Include="Content\colorlib-error-404-6\index.html" />
     <Content Include="Content\colorlib-error-404-6\readme.txt" />
+    <Content Include="Content\travelphotos\berlin.jpg" />
+    <Content Include="Content\travelphotos\bulgaristan.jpeg" />
+    <Content Include="Content\travelphotos\katedral.jpg" />
+    <Content Include="Content\travelphotos\sofia.jpg" />
+    <Content Include="Content\travelphotos\viyana.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
