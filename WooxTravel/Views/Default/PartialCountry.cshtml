@@ -32,7 +32,17 @@
                                                 <div class="main-button">
                                                     <a href="about.html">Tur Detayları</a>
                                                 </div>
-                                                <p>@item.Description.Substring(0,500)</p>
+                                                <!-- Kısa açıklama -->
+                                                <p id="short-description-@item.DestinationID">
+                                                    @item.Description.Substring(0, item.Description.Substring(0,500).LastIndexOf(" "))...
+                                                    <a href="javascript:void(0);" onclick="showFullDescription(@item.DestinationID)">Devamını gör...</a>
+                                                </p>
+
+                                                <!-- Tam açıklama (başlangıçta gizli) -->
+                                                <p id="full-description-@item.DestinationID" style="display: none;">
+                                                    @item.Description
+                                                    <a href="javascript:void(0);" onclick="hideFullDescription(@item.DestinationID)">Kapat</a>
+                                                </p>
                                                 <ul class="info">
                                                     <li><i class="fa fa-user"></i> @item.DayNight Gün - @(item.DayNight-1) Gece</li>
                                                     <li><i class="fa fa-globe"></i> @item.Price₺</li>
@@ -46,6 +56,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         }
                     </div>
                 </div>
@@ -65,3 +76,16 @@
         </div>
     </div>
 </div>
+<script>
+    function showFullDescription(id) {
+        // Kısa açıklamayı gizle, tam açıklamayı göster
+        document.getElementById(`short-description-${id}`).style.display = 'none';
+        document.getElementById(`full-description-${id}`).style.display = 'block';
+    }
+
+    function hideFullDescription(id) {
+        // Tam açıklamayı gizle, kısa açıklamayı göster
+        document.getElementById(`short-description-${id}`).style.display = 'block';
+        document.getElementById(`full-description-${id}`).style.display = 'none';
+    }
+</script>
