@@ -722,6 +722,7 @@
     <Content Include="wooxtravel-1.0.0\assets\webfonts\fa-v4compatibility.woff2" />
     <Content Include="wooxtravel-1.0.0\vendor\jquery\jquery.min.map" />
     <Content Include="wooxtravel-1.0.0\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\Default\TourDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

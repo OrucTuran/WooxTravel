@@ -33,6 +33,14 @@ namespace WooxTravel.Controllers
             var values = context.Destinations.Take(4).ToList();
             return PartialView(values);
         }
+        public ActionResult TourDetails(int id)
+        {
+            var destination = context.Destinations.FirstOrDefault(x => x.DestinationID == id);
+            ViewBag.ImageUrl = destination.ImageURL;
+
+            return View(destination);
+        }
+
         public PartialViewResult PartialCountry()
         {
             var values = context.Destinations.ToList();
@@ -41,6 +49,10 @@ namespace WooxTravel.Controllers
         public PartialViewResult PartialFooter()
         {
             return PartialView();
+        }
+        public ActionResult Test()
+        {
+            return View();
         }
     }
 }

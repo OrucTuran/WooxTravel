@@ -1,0 +1,105 @@
+﻿@model WooxTravel.Entities.Destination
+
+@{
+    Layout = null;
+    ViewBag.Title = "Tour Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>WoOx Travel - Tour Details</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/wooxtravel-1.0.0/assets/css/templatemo-woox-travel.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <style>
+        .main-nav ul.nav {
+            display: flex;
+            justify-content: flex-start;
+            padding: 0;
+            margin: 0;
+        }
+
+            .main-nav ul.nav li {
+                list-style: none;
+                margin-right: 20px;
+            }
+
+                .main-nav ul.nav li:last-child {
+                    margin-right: 0;
+                }
+
+                .main-nav ul.nav li a {
+                    text-decoration: none;
+                    color: #000;
+                }
+    </style>
+</head>
+
+<body style="background-image: url('@Model.ImageURL'); background-size: cover; background-position: center;">
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="~/wooxtravel-1.0.0/assets/images/logo.png" alt="">
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="about-main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <div class="blur-bg"></div>
+                        <h4>@Model.Title</h4>
+                        <div class="line-dec"></div>
+                        <h2>@Model.Country/@Model.City</h2>
+                        <p>@Model.Description</p>
+                        <div class="main-button">
+                            <a href="/Default/Index/">Anasayfaya Dön</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/wooxtravel-1.0.0/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/wooxtravel-1.0.0/assets/js/isotope.min.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/owl-carousel.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/wow.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/tabs.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/popup.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/custom.js"></script>
+
+    <script>
+        $(".option").click(function () {
+            $(".option").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
+
+</body>
+
+</html>
