@@ -30,7 +30,8 @@ namespace WooxTravel.Controllers
         }
         public PartialViewResult PartialBanner()
         {
-            return PartialView();
+            var values = context.Destinations.Take(4).ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialCountry()
         {
