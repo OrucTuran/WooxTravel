@@ -16,27 +16,148 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.html" class="active">Anasayfa</a></li>
                         <li><a href="/Default/TourDetails/">Hakkımda</a></li>
                         <li><a href="deals.html">Rotalar</a></li>
-                        <li><a href="reservation.html">Rezervasyon</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#ReservationModal">Rezervasyon</a></li>
                         <li><a href="reservation.html">Kayıt Ol</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
-                    <!-- ***** Menu End ***** -->
                 </nav>
             </div>
         </div>
     </div>
 </header>
 <!-- ***** Header Area End ***** -->
-<!-- ***** Main Banner Area Start ***** -->
+<!-- Rezervasyon Modal -->
+<div class="modal fade" id="ReservationModal" tabindex="-1" role="dialog" aria-labelledby="ReservationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="ReservationModalLabel" style="color:#ffffff">Rezervasyon Yap</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/Reservation/CreateReservation" method="post">
+                    <div class="form-group">
+                        <label for="name">Ad Soyad:</label>
+                        <input type="text" class="form-control" id="name" name="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon:</label>
+                        <input type="text" class="form-control" id="phone" name="Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Kişi Sayısı:</label>
+                        <input type="number" class="form-control" id="number" name="PersonCount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Tarih:</label>
+                        <input type="datetime" class="form-control" id="date" name="RezervationDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Açıklama:</label>
+                        <input type="text" class="form-control" id="aciklama" name="Description">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Rezervasyon Yap</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Message Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel"style="color:#ffffff">Başarılı!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="color:#ffffff">
+                Rezervasyon başarıyla kaydedildi. Keyifli anılar dileriz. :)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="closeSuccessModal">Tamam</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .modal-content {
+        background-image: url('https://www.marieclairemaison.com.tr/wp-content/uploads/2024/09/sonbahar-renk-paleti-yatak-odanizda-sicak-ve-davetkar-bir-atmosfer-yaratin-4-696x365.png');
+        background-size: inherit;
+        background-position: center;
+        color: white;
+    }
+</style>
+<script>
+    $('form').on('submit', function (e) {
+        e.preventDefault(); // Formun varsayılan gönderim işlemini engelle
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function (response) {
+                if (response.success) {
+                    $('#ReservationModal').modal('hide'); // Rezervasyon modalını kapat
+                    $('#successModal').modal('show'); // Başarı modalını göster
+                    setTimeout(function () {
+                        window.location.href = '/Default/Index/'; // 1,5 saniye sonra ana sayfaya yönlendir
+                    }, 1500);
+                } else {
+                    alert('Bir hata oluştu. Lütfen bilgilerinizi kontrol edin.');
+                }
+            },
+            error: function () {
+                alert('Bir hata oluştu. Lütfen tekrar deneyin.'); // AJAX isteği başarısız olursa hata mesajı
+            }
+        });
+    });
+
+    // "Tamam" butonuna tıklandığında başarı modalını kapat
+    $('#closeSuccessModal').on('click', function () {
+        $('#successModal').modal('hide'); // Başarı modalını kapat
+    });
+</script>
+@*<script>
+    $('form').on('submit', function (e) {
+       /* e.preventDefault(); // Formun varsayılan gönderim işlemini engelle*/
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function (response) {
+                if (response.success) {
+                    $('#ReservationModal').modal('hide'); // Rezervasyon modalını kapat
+                    $('#successModal').modal('show'); // Başarı modalını göster
+                } else {
+                    alert('Bir hata oluştu. Lütfen bilgilerinizi kontrol edin.');
+                }
+            }
+        });
+    });
+
+    // "Tamam" butonuna tıklandığında başarı modalını kapat
+    $('#closeSuccessModal').on('click', function () {
+        $('#ReservationModal').modal('hide');
+        $('#successModal').modal('hide'); // Başarı modalını kapat
+    });
+</script>*@
