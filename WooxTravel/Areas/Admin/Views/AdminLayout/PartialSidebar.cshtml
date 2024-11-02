@@ -49,23 +49,25 @@
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
-                    <h4 class="text-section">Araçlar</h4>
+                    <h4 class="text-section">İşlemler</h4>
                 </li>
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#maps">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Harita</p>
-                        <span class="caret"></span>
+                    <a href="/Admin/Profile/">
+                        <i class="fas fa-user"></i>
+                        <p>Destinasyon</p>
                     </a>
-                    <div class="collapse" id="maps">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="~/kaiadmin-lite-1.2.0/maps/googlemaps.html">
-                                    <span class="sub-item">Google Maps</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="~/kaiadmin-lite-1.2.0/messages/operations.html">
+                        <i class="fas fa-hotel"></i>
+                        <p>Rezervasyon</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/kaiadmin-lite-1.2.0/widgets.html">
+                        <i class="fas fa-desktop"></i>
+                        <p>Araçlar</p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#charts">
@@ -104,19 +106,31 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="~/kaiadmin-lite-1.2.0/widgets.html">
-                        <i class="fas fa-desktop"></i>
-                        <p>Widgets</p>
-                        <span class="badge badge-success">4</span>
+                    <a data-bs-toggle="collapse" href="#messages">
+                        <i class="far fa-envelope"></i>
+                        <p>Mesajlar</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse" id="messages">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="/Admin/Message/SendMessage/">
+                                    <span class="sub-item">Mesaj Gönder</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Message/Inbox/">
+                                    <span class="sub-item">Gelen Mesajlar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Message/SendBox/">
+                                    <span class="sub-item">Giden Mesajlar</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="nav-section">
-                    <span class="sidebar-mini-icon">
-                        <i class="fa fa-ellipsis-h"></i>
-                    </span>
-                    <h4 class="text-section">Mesajlar</h4>
-                </li>
-
             </ul>
         </div>
     </div>
