@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using WooxTravel.Context;
 using WooxTravel.Entities;
 
@@ -6,7 +7,7 @@ namespace WooxTravel.Controllers
 {
     public class ReservationController : Controller
     {
-        TravelContext context = new TravelContext();
+        public TravelContext context = new TravelContext();
 
         [HttpPost]
         public ActionResult CreateReservation(Rezervation rezervation)
@@ -15,7 +16,7 @@ namespace WooxTravel.Controllers
             {
                 context.Rezervations.Add(rezervation);
                 context.SaveChanges();
-                return Json(new { success = true }); // Başarılı ise success true döndür
+                return Json(new { success = true });
             }
             else
             {

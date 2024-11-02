@@ -1,0 +1,45 @@
+﻿@model WooxTravel.Entities.Rezervation
+@{
+    ViewBag.Title = "UpdateReservation";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Destinasyon İşlemleri</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/Admin/Reservation/UpdateReservation">
+                            <div class="form-group">
+                                @Html.HiddenFor(x=>x.RezervationID)
+                                <label>Ad Soyad</label>
+                                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                                <br>
+                                <label>Email</label>
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                <br>
+                                <label>Telefon</label>
+                                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                                <br>
+                                <label>Kişi Sayısı</label>
+                                @Html.TextBoxFor(x => x.PersonCount, new { @class = "form-control" })
+                                <br>
+                                <label>Rez. Tarihi</label>
+                                @Html.TextBoxFor(x => x.RezervationDate, new { @class = "form-control" })
+                                <br>
+                                <label>Açıklama</label>
+                                @Html.TextAreaFor(x => x.Description, 5, 0, new { @class = "form-control" })
+                                <br />
+                                <button class="btn btn-outline-info" style="border-radius:30px">Güncelle</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

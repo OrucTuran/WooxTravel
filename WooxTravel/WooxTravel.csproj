@@ -133,6 +133,7 @@
     <Compile Include="Areas\Admin\Controllers\DestinationController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReservationController.cs" />
     <Compile Include="Context\TravelContext.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPagesController.cs" />
@@ -678,6 +679,8 @@
     <Content Include="wooxtravel-1.0.0\vendor\jquery\jquery.min.js" />
     <Content Include="wooxtravel-1.0.0\vendor\jquery\jquery.slim.js" />
     <Content Include="wooxtravel-1.0.0\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Areas\Admin\Views\Reservation\ReservationList.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservation\UpdateReservation.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
