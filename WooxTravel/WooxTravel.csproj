@@ -131,6 +131,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ChartsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CreditCartController.cs" />
     <Compile Include="Areas\Admin\Controllers\DestinationController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
@@ -184,6 +185,13 @@
     <Content Include="Content\travelphotos\katedral.jpg" />
     <Content Include="Content\travelphotos\sofia.jpg" />
     <Content Include="Content\travelphotos\viyana.jpg" />
+    <Content Include="DatPayment-master\.gitignore" />
+    <Content Include="DatPayment-master\dist\css\DatPayment.css" />
+    <Content Include="DatPayment-master\dist\js\DatPayment.js" />
+    <Content Include="DatPayment-master\examples\example.css" />
+    <Content Include="DatPayment-master\examples\simple.html" />
+    <Content Include="DatPayment-master\Gulpfile.js" />
+    <Content Include="DatPayment-master\src\js\DatPayment.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -691,6 +699,14 @@
     <Content Include="Areas\Admin\Views\Charts\DonutChart.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLayout\PartialDestinationNavbar.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLayout\PartialAdminNavbar.cshtml" />
+    <Content Include="Areas\Admin\Views\CreditCart\Index.cshtml" />
+    <Content Include="DatPayment-master\bower.json" />
+    <Content Include="DatPayment-master\LICENSE" />
+    <Content Include="DatPayment-master\package.json" />
+    <Content Include="DatPayment-master\README.md" />
+    <Content Include="DatPayment-master\src\sass\DatPayment.scss" />
+    <Content Include="DatPayment-master\src\sass\_mixin.scss" />
+    <Content Include="DatPayment-master\src\sass\_variables.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
