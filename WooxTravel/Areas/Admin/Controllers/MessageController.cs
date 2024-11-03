@@ -42,5 +42,21 @@ namespace WooxTravel.Areas.Admin.Controllers
             context.SaveChanges();
             return RedirectToAction(nameof(SendBox));
         }
+        public JsonResult GetMessageDetail(int id)
+        {
+            var message = context.Messages.Find(id);
+            if (message != null)
+            {
+                return Json(new
+                {
+                    senderMail = message.SendMail,
+                    receiverMail = message.ReceiverMail,
+                    subject = message.Subject,
+                    sendDate = message.SendDate.ToString("dd.MM.yyyy HH:mm"),
+                    content = message.Content
+                }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(null);
+        }
     }
 }

@@ -134,28 +134,3 @@
         $('#successModal').modal('hide'); // Başarı modalını kapat
     });
 </script>
-@*<script>
-    $('form').on('submit', function (e) {
-       /* e.preventDefault(); // Formun varsayılan gönderim işlemini engelle*/
-
-        $.ajax({
-            url: $(this).attr('action'),
-            type: 'POST',
-            data: $(this).serialize(),
-            success: function (response) {
-                if (response.success) {
-                    $('#ReservationModal').modal('hide'); // Rezervasyon modalını kapat
-                    $('#successModal').modal('show'); // Başarı modalını göster
-                } else {
-                    alert('Bir hata oluştu. Lütfen bilgilerinizi kontrol edin.');
-                }
-            }
-        });
-    });
-
-    // "Tamam" butonuna tıklandığında başarı modalını kapat
-    $('#closeSuccessModal').on('click', function () {
-        $('#ReservationModal').modal('hide');
-        $('#successModal').modal('hide'); // Başarı modalını kapat
-    });
-</script>*@

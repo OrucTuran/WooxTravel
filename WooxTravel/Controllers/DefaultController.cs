@@ -26,9 +26,8 @@ namespace WooxTravel.Controllers
         }
 
         
-        public PartialViewResult PartialNavbar(Rezervation rezervation)
+        public PartialViewResult PartialNavbar()
         {
-           
             return PartialView();
         }
         public PartialViewResult PartialBanner()

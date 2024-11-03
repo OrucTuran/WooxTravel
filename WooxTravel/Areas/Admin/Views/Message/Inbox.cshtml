@@ -5,6 +5,20 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     int count = 0; //id kaymamasi icin
 }
+<!-- SweetAlert CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
+<!-- SweetAlert JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
 <div class="container">
     <div class="page-inner">
@@ -36,7 +50,7 @@
                                         <td>@item.Subject</td>
                                         <td>@item.SendDate.ToShortDateString()</td>
                                         <td>@item.IsRead</td>
-                                        <td><a href="" class="btn btn btn-outline-warning" style="border-radius:30px">Mesajı Aç</a></td>
+                                        <td><button class="btn btn btn-outline-warning openModal" style="border-radius:30px" data-id="@item.MessageID">Mesajı Aç</button></td>
                                     </tr>
                                 }
                             </tbody>
@@ -49,3 +63,62 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="messageDetailModal" tabindex="-1" role="dialog" aria-labelledby="messageDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageDetailModalLabel">Mesaj Detayları</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6><b>Gönderici:</b></h6>
+                <p id="senderMail"></p>
+                <h6><b>Konu:</b></h6>
+                <p id="subject"></p>
+                <h6><b>Tarih:</b></h6>
+                <p id="sendDate"></p>
+                <h6><b>Mesaj:</b></h6>
+                <p id="content"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function () {
+    $('.openModal').click(function () {
+        var messageId = $(this).data('id');
+
+        $.ajax({
+            url: '@Url.Action("GetMessageDetail", "Message")',
+            type: 'GET',
+            data: { id: messageId },
+            success: function (data) {
+                if (data) {
+                    // SweetAlert ile mesaj detaylarını göster
+                    swal({
+                        title: "Mesaj Detayları",
+                        text: `
+                            Gönderici: ${data.senderMail} \n
+                            Konu: ${data.subject} \n
+                            Tarih: ${data.sendDate} \n
+                            Mesaj: ${data.content}
+                        `,
+                        icon: "info",
+                        button: "Tamam",
+                    });
+                } else {
+                    swal("Hata!", "Mesaj bulunamadı.", "error");
+                }
+            },
+            error: function () {
+                swal("Hata!", "Bir hata oluştu.", "error");
+            }
+        });
+    });
+});
+
+</script>
