@@ -690,6 +690,7 @@
     <Content Include="Areas\Admin\Views\Charts\MultiBarChart.cshtml" />
     <Content Include="Areas\Admin\Views\Charts\DonutChart.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLayout\PartialDestinationNavbar.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminLayout\PartialAdminNavbar.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

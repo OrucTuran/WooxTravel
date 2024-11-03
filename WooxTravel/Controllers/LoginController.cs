@@ -34,5 +34,11 @@ namespace WooxTravel.Controllers
                 return View();
             }
         }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut(); // AuthCookie'yi sil
+            Session.Clear(); // Tüm oturum verilerini temizle
+            return RedirectToAction("Index","Login"); // Giriş sayfasına yönlendir
+        }
     }
 }

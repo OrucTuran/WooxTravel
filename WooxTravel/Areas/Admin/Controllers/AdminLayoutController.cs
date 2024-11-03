@@ -46,6 +46,11 @@ namespace WooxTravel.Areas.Admin.Controllers
 
             return PartialView(last4Destination);
         }
-
+        public PartialViewResult PartialAdminNavbar()
+        {
+            var username = Session["x"]; //kullanıcı adı alındı
+            var admin = context.Admins.Where(x => x.Username == username).FirstOrDefault();
+            return PartialView(admin);
+        }
     }
 }
