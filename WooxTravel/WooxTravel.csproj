@@ -130,10 +130,12 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChartsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DestinationController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReservationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\WidgetController.cs" />
     <Compile Include="Context\TravelContext.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPagesController.cs" />
@@ -681,6 +683,12 @@
     <Content Include="wooxtravel-1.0.0\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Areas\Admin\Views\Reservation\ReservationList.cshtml" />
     <Content Include="Areas\Admin\Views\Reservation\UpdateReservation.cshtml" />
+    <Content Include="Areas\Admin\Views\Widget\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Charts\LineChart.cshtml" />
+    <Content Include="Areas\Admin\Views\Charts\BarChart.cshtml" />
+    <Content Include="Areas\Admin\Views\Charts\MultiLineChart.cshtml" />
+    <Content Include="Areas\Admin\Views\Charts\MultiBarChart.cshtml" />
+    <Content Include="Areas\Admin\Views\Charts\DonutChart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

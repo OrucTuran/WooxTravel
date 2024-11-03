@@ -1,0 +1,112 @@
+﻿@using Newtonsoft.Json
+@model List<WooxTravel.Entities.Message>
+@{
+    ViewBag.Title = "DonutChart";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>DonutChart</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/kaiadmin-lite-1.2.0/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/kaiadmin-lite-1.2.0/assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="/kaiadmin-lite-1.2.0/assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="/kaiadmin-lite-1.2.0/assets/css/demo.css" />
+
+    <style>
+        /* Chart container style */
+        .chart-container {
+            position: relative;
+            max-height: 400px; /* Maksimum yükseklik ayarı */
+            max-width: 100%; /* Maksimum genişlik ayarı */
+            margin: auto; /* Ortalar */
+            padding: 20px; /* İç boşluk */
+        }
+
+        canvas {
+            max-height: 100%; /* Yüksekliği sınırlama */
+            max-width: 100%; /* Genişliği sınırlama */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Donut Chart</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="donutChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core JS Files -->
+    <script src="/kaiadmin-lite-1.2.0/assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="/kaiadmin-lite-1.2.0/assets/js/core/popper.min.js"></script>
+    <script src="/kaiadmin-lite-1.2.0/assets/js/core/bootstrap.min.js"></script>
+    <!-- Chart JS -->
+    <script src="/kaiadmin-lite-1.2.0/assets/js/plugin/chart.js/chart.min.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="/kaiadmin-lite-1.2.0/assets/js/kaiadmin.min.js"></script>
+
+    <script>
+        var donutChart = document.getElementById("donutChart").getContext("2d");
+
+        var labels = @Html.Raw(JsonConvert.SerializeObject(Model.Select(s => s.Subject).ToList()));
+
+        // Örnek veri noktaları
+        var dataset1 = @Html.Raw(JsonConvert.SerializeObject(Model.Select(s => s.Subject.Count()).ToList()));
+        var dataset2 = @Html.Raw(JsonConvert.SerializeObject(Model.Select(s => s.Subject.Length % 5).ToList())); // Örnek olarak farklı bir veri seti
+
+        var myDonutChart = new Chart(donutChart, {
+            type: "doughnut", // Donut grafiği türü
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Data",
+                    backgroundColor: ["#1d7af3", "#f45b69", "#68b828"],
+                    data: dataset1, // Donut grafiği için veri
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        padding: 10,
+                        fontColor: "#1d7af3",
+                    },
+                },
+                tooltips: {
+                    bodySpacing: 4,
+                    mode: "nearest",
+                    intersect: 0,
+                    position: "nearest",
+                    xPadding: 10,
+                    yPadding: 10,
+                    caretPadding: 10,
+                },
+                layout: {
+                    padding: { left: 15, right: 15, top: 15, bottom: 15 },
+                },
+            },
+        });
+    </script>
+</body>
+</html>
