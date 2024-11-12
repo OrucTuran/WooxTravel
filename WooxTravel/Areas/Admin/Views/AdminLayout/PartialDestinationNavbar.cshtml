@@ -1,0 +1,54 @@
+﻿@model List<WooxTravel.Entities.Destination>
+
+<ul class="dropdown-menu notif-box animated fadeIn"
+    aria-labelledby="notifDropdown">
+    <li>
+        <div class="dropdown-title">
+            4 yeni seyehatiniz var
+        </div>
+    </li>
+    <li>
+        @{
+            string GetTimeAgo(DateTime sendDate)
+            {
+                var timeSpan = DateTime.Now - sendDate;
+
+                if (timeSpan.TotalSeconds < 60)
+                    return $"{(int)timeSpan.TotalSeconds} saniye önce";
+                if (timeSpan.TotalMinutes < 60)
+                    return $"{(int)timeSpan.TotalMinutes} dakika önce";
+                if (timeSpan.TotalHours < 24)
+                    return $"{(int)timeSpan.TotalHours} saat önce";
+                if (timeSpan.TotalDays < 30)
+                    return $"{(int)timeSpan.TotalDays} gün önce";
+                if (timeSpan.TotalDays < 365)
+                    return $"{(int)(timeSpan.TotalDays / 30)} ay önce";
+
+                return $"{(int)(timeSpan.TotalDays / 365)} yıl önce";
+            }
+        }
+        <div class="notif-scroll scrollbar-outer">
+            <div class="notif-center">
+                @foreach (var item in Model)
+                {
+
+                    <a href="#">
+                        <div class="notif-icon notif-primary">
+                            <i class="@item.ImageURL"></i>
+                        </div>
+                        <div class="notif-content">
+                            <span class="block"> @item.Title </span>
+                            <span class="time">@item.City</span>
+                        </div>
+                    </a>
+
+                }
+            </div>
+        </div>
+    </li>
+    <li>
+        <a class="see-all" href="/Default/Index/">
+            Tüm Seyehatleri Gör<i class="fa fa-angle-right"></i>
+        </a>
+    </li>
+</ul>
