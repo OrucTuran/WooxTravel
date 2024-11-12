@@ -5,6 +5,11 @@
 
 <link rel="stylesheet" type="text/css" href="/DatPayment-master/dist/css/DatPayment.css">
 <link rel="stylesheet" type="text/css" href="/DatPayment-master/example.css">
+<!-- SweetAlert CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css">
+
+<!-- SweetAlert JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
 
 <form id="payment-form" class="datpayment-form my-5" style="margin-top:100px !important; min-height: calc(100vh-51.8px); width:60%;">
     <div class="dpf-title">
@@ -48,7 +53,7 @@
 
         <button type="submit" class="dpf-submit">
             <span class="btn-active-state">
-                Ödeme
+                Ödemeeee
             </span>
             <span class="btn-loading-state">
                 <i class="fa fa-refresh "></i>
@@ -76,7 +81,7 @@
             number: '•••• •••• •••• ••••',
             expiry: '••/••',
             cvc: '•••',
-            name: 'Örnek İsim'
+            name: 'ORUC TURAN'
         },
 
         validators: {
@@ -101,8 +106,18 @@
     payment_form.form.addEventListener('payment_form:submit', function (e) {
         var form_data = e.detail;
         payment_form.unlockForm();
+
+        Swal.fire({
+            title: 'Ödeme Tamamlandı!',
+            text: 'Ödemeniz başarıyla alındı. Fatura bilgilerinizi, sistemde kayıtlı olan e-posta adresiniz üzerinden kontrol edebilirsiniz.',
+            icon: 'success',
+            confirmButtonText: 'Anladım'
+        });
+
+
         demo_log_div.innerHTML += "<br>" + JSON.stringify(form_data);
     });
+
 
     payment_form.form.addEventListener('payment_form:field_validation_success', function (e) {
         var input = e.detail;
