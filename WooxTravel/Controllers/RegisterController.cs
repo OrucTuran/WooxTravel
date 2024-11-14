@@ -22,7 +22,8 @@ namespace WooxTravel.Controllers
         {
             context.Admins.Add(admin);
             context.SaveChanges();
-            return RedirectToAction(nameof(Index), "Login");
+            TempData["Success"] = true;
+            return RedirectToAction("Index", "Register");
         }
     }
 }

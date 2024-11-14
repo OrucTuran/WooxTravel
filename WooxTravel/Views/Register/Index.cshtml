@@ -3,29 +3,72 @@
     Layout = null;
 }
 
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WooX Travel - Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<form method="post">
-    <div class="container">
-        <br />
-        <div class="alert alert-primary" style="background-color:#808080">
-            <h3>Yeni Kullanıcı Kayıt Sayfası</h3>
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet" href="/colorlib-regform-17/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="/colorlib-regform-17/css/style.css">
+
+    <!-- SweetAlert CSS ve JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper" style="background-image: url('/colorlib-regform-17/images/bg-registration-form-1.jpg');">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="/colorlib-regform-17/images/E10320WG.jpg" alt="">
+            </div>
+            <form method="post">
+                <h3>Yeni Kullanıcı Kayıt</h3>
+                <div class="form-group">
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Adınız", @required = "required" })
+                    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", placeholder = "Soyadınız", @required = "required" })
+                </div>
+                <div class="form-wrapper">
+                    @Html.TextBoxFor(x => x.Username, new { @class = "form-control", placeholder = "Kullanıcı Adınız", @required = "required" })
+                    <i class="zmdi zmdi-account"></i>
+                </div>
+                <div class="form-wrapper">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Mail Adresiniz", @required = "required" })
+                    <i class="zmdi zmdi-email"></i>
+                </div>
+                <div class="form-wrapper">
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Şifreniz", @required = "required" })
+                    <i class="zmdi zmdi-lock"></i>
+                </div>
+                <button>
+                    Kayıt Ol
+                    <i class="zmdi zmdi-arrow-right"></i>
+                </button>
+            </form>
         </div>
-        <label>Adınız</label>
-        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
-        <br />
-        <label>Soyadınız</label>
-        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
-        <br />
-        <label>Mail Adresiniz</label>
-        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
-        <br />
-        <label>Kullanıcı Adınız</label>
-        @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
-        <br />
-        <label>Şifreniz</label>
-        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
-        <br />
-        <button class="btn btn-outline-primary" style="border-radius:30px">Kayıt Ol</button>
     </div>
-</form>
+    <!-- SweetAlert Bildirim Kodu -->
+    @if (TempData["Success"] != null && (bool)TempData["Success"])
+    {
+        <script>
+            Swal.fire({
+                title: 'Kayıt Başarılı!',
+                text: 'Kaydınız başarılı bir şekilde tamamlandı.',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false
+            }).then(() => {
+                window.location.href = '/Login/Index';
+            });
+        </script>
+}
+    }
+</body>
+</html>

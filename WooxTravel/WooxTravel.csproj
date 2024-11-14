@@ -173,6 +173,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="colorlib-regform-17\css\style.css" />
+    <Content Include="colorlib-regform-17\fonts\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="colorlib-regform-17\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="colorlib-regform-17\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="colorlib-regform-17\images\bg-registration-form-1.jpg" />
+    <Content Include="colorlib-regform-17\images\E10320WG.jpg" />
+    <Content Include="colorlib-regform-17\images\registration-form-1.jpg" />
+    <Content Include="colorlib-regform-17\index.html" />
+    <Content Include="colorlib-regform-17\readme.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -707,6 +716,15 @@
     <Content Include="DatPayment-master\src\sass\DatPayment.scss" />
     <Content Include="DatPayment-master\src\sass\_mixin.scss" />
     <Content Include="DatPayment-master\src\sass\_variables.scss" />
+    <Content Include="colorlib-regform-17\css\style.css.map" />
+    <Content Include="colorlib-regform-17\css\style.scss" />
+    <Content Include="colorlib-regform-17\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="colorlib-regform-17\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="colorlib-regform-17\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="colorlib-regform-17\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="colorlib-regform-17\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="colorlib-regform-17\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="colorlib-regform-17\images\E10320WG.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
