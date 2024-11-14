@@ -21,7 +21,8 @@ namespace WooxTravel.Controllers
         [HttpPost]
         public ActionResult Index(Admin admin)
         {
-            var values = context.Admins.FirstOrDefault(x => x.Username == admin.Username && x.Password==admin.Password);
+            var values = context.Admins.FirstOrDefault(x => x.Username == admin.Username && x.Password == admin.Password);
+            TempData["Success"] = true;
 
             if (values != null)
             {
@@ -31,14 +32,16 @@ namespace WooxTravel.Controllers
             }
             else
             {
+                TempData["Error"] = "Kullanıcı adı veya şifre yanlış."; // Hata mesajını ayarlayın
                 return View();
             }
         }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut(); // AuthCookie'yi sil
             Session.Clear(); // Tüm oturum verilerini temizle
-            return RedirectToAction("Index","Login"); // Giriş sayfasına yönlendir
+            return RedirectToAction("Index", "Login"); // Giriş sayfasına yönlendir
         }
     }
 }
