@@ -16,7 +16,11 @@ M&Y Yazılım Eğitim Akademi Danışmanlık tarafından sunulan ve Murat Yüced
 ### 🖱️ Admin Paneli
 - Admin paneli, yöneticilere sistemin farklı bölümlerine erişim ve işlem yapma imkânı sunar.
   - **Doğru kullanıcı adı ve şifreyle giriş** yapan adminler, Dashboard ekranına yönlendirilir.
-  - **Hatalı girişler için SweetAlert** ile ekranın sağ üst köşesinde bilgilendirme yapılır.
+  - **Son gelen mesajlar** ekranın sağ üst köşesindeki mesaj butonunun altında listelenir.
+  - **Son eklenen seyahatler** ekranın sağ üst köşesindeki bildiri butonunun altında listelenir.
+  - **Kısa yollar için** ekranın sağ üst kısmında bildiri butonunun sağındaki kısayol butonu adminler için **Login, Rezervasyon, Admin, Mesaj, Grafik ve Ödeme** kısımlarına kısayol butonlarını içerir.
+  - Sağ üst en sağdaki Merhaba [Admin] butonu üzerinden **Profile Git , Gelen Kutusuna Git ve Çıkış** işlemlerini gerçekleştirebilirsiniz.
+
 - Sol menü üzerinden:
   - **Destinasyonlar**, **Rezervasyonlar** üzerinde **CRUD işlemleri** yapılabilir.
   - **Grafikler** bölümünden **Çizgi, Bar, Çoklu Çizgi, Çoklu Çubuk ve Donut grafiklerine** erişim sağlanır.
