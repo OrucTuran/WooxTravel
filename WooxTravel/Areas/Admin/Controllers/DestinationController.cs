@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using WooxTravel.Context;
 using WooxTravel.Entities;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WooxTravel.Areas.Admin.Controllers
 {
@@ -13,9 +15,10 @@ namespace WooxTravel.Areas.Admin.Controllers
     {
         // GET: Admin/Destination
         readonly TravelContext context = new TravelContext();
-        public ActionResult DestinationList()
+        public ActionResult DestinationList(int page = 1)
         {
-            var values = context.Destinations.ToList();
+            var values = context.Destinations.ToList().ToPagedList(page, 3);
+            ViewBag.pageNumm = page;
             return View(values);
         }
         [HttpGet]

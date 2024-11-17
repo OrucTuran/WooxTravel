@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using WooxTravel.Context;
 using WooxTravel.Entities;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WooxTravel.Controllers
 {
